@@ -1,0 +1,84 @@
+.page-container {
+  display: flex;
+  flex-direction: column; /* הוספת כיוון אנכי */
+  align-items: center; /* למרכז את התוכן באופן אופקי */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column; /* הוספת כיוון אנכי */
+  align-items: center; /* למרכז את הקלפים בתוך העמוד */
+}
+
+.card {
+  width: 1470px;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 520px;
+  margin-right: 0;
+  margin-left: 0;
+  align-self: flex-start; /* הכוונה שכל הקלפים יהיו ממוקמים בראש העמוד */
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.detail,
+.detailtop {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-right: 43px;
+  margin-left: 10px;
+}
+
+.detailtop {
+  margin-bottom: 10px;
+}
+
+.business-details {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  display: flex;
+}
+
+.card-back {
+  z-index: 1; /* Put the card behind other elements */
+}
+
+.card-front {
+  z-index: 999; /* Put the card in front of other elements */
+}
+.detail:hover svg {
+  fill: rgb(254, 110, 110); /* צבע בורדו */
+}
+  

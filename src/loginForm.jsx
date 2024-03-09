@@ -3,11 +3,14 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { useNavigate } from "react-router-dom";
+import './login.css';
 
-export default function LoginForm() {
+export function LoginForm() {
     const nameRef = useRef();
     const passwordRef = useRef();
     const url = "http://localhost:8787";
+    const navigate = useNavigate(); 
 
     async function post() {
         try {
@@ -23,7 +26,8 @@ export default function LoginForm() {
                     body: JSON.stringify({ name: nameValue, password: passwordValue })
                 });
                 const data = await res.json();
-                console.log(data); // עשה משהו עם הנתונים שהתקבלו מהשרת
+                console.log(data); 
+                navigate("/manager");
             } else {
                 console.log('Please enter both username and password');
             }
@@ -33,18 +37,11 @@ export default function LoginForm() {
     }
 
     return (
-        <Box
-            // display="flex"
-            // flexDirection="column"
-            // justifyContent="center"
-            // alignItems="center"
-            // height="50vh" // גובה מלא של המסך
-        >
+        <Box>
             <Box id="boxLog"
                 component="form"
                 sx={{'& > :not(style)': { m: 1.5, width: '22ch' }}}
-                textAlign="center" //כפתור login על מנת שיהיה באמצע
-
+                textAlign="center"
             >
                 <p id="logAdmin">Log in</p>
                 <TextField type="text" inputRef={nameRef} id="outlined-basic1" label="Username" variant="outlined" />
@@ -56,3 +53,8 @@ export default function LoginForm() {
         </Box>    
     );
 }
+
+
+
+
+

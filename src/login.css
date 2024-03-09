@@ -1,10 +1,8 @@
-body {
+/* body {
     background-image: url('../pictures/11.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 70%;
-   /* opacity: 0.9;*/
-   
 }
 #logAdmin{
     font-family: 'Doppio One';
@@ -12,10 +10,6 @@ body {
     color:black ;
 }
  #boxLog{
-   /* background-color: rgb(185, 196, 60);
-    width: 400px;
-    height: 1000px;
-    border-radius: 7px;*/
    padding-bottom: 90px;
     padding-left: 900px;
-} 
+}  */

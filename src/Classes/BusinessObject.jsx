@@ -1,74 +1,69 @@
-import { makeObservable, observable, action, computed, runInAction } from 'mobx';
+import { makeObservable, observable, action, runInAction } from 'mobx';
 
 const baseUrl = 'http://localhost:8787';
 
-class BusinessObject {
-    list = [];
-
+class BusinessDataObject {
+    businessDataList = {
+        id: "1",
+        phone: "03-6165899",
+        name:'HOME SWEET HOME',
+        address: "Tel-Aviv dizengoff 82",
+        email: "hsweeth@gmail.com",
+        owner: "Yigal Allon",
+        logo: "./pictures/homeLogo.png"
+    };
+    
     constructor() {
         makeObservable(this, {
-            list: observable,
-            addBusiness: action,
-            getList: computed,
-            setList: action
+            businessDataList: observable,
+            addBusinessData: action,
+            getLast: action
         });
-        this.initList();
     }
 
-    async initList() {
+    async addBusinessData(businessData) {
         try {
-            const res = await fetch(`${baseUrl}/business`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-            });
-            if (res.ok) {
-                const data = await res.json();
-                runInAction(() => {
-                    this.setList(data);
-                });
-            } else {
-                console.error('Failed to fetch business');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
-
-    // Action to set list
-    setList(data) {
-        this.list = data;
-    }
-
-    async addBusiness(business) {
-        try {
-            const res = await fetch(`${baseUrl}/business`, {
+            const response = await fetch(`${baseUrl}/businessData`, {
                 method: 'POST',
-                body: JSON.stringify(business),
+                body: JSON.stringify(businessData),
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
             });
-            if (res.ok) {
-                const data = await res.json();
-                runInAction(() => {
-                    this.list.push(data);
-                });
+            if (response.ok) {
+                const newBusinessData = await response.json();
+                console.log({ newBusinessData });
+                this.businessDataList = { ...businessData };
+                console.log("BusinessData added successfully");
             } else {
-                console.error('Failed to add business');
+                console.log("Error: BusinessData not added (status code: " + response.status + ")");
             }
         } catch (error) {
-            console.error('Error adding business:', error);
+            console.error("Error:", error);
         }
     }
 
-    get getList() {
-        return this.list;
+    async getLast() {
+        try {
+            const response = await fetch(`${baseUrl}/businessData`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+            });
+            if (response.ok) {
+                const newBusinessData = await response.json();
+                console.log(newBusinessData)
+                return newBusinessData;
+            } else {
+                console.log("Error: Failed to get businessData (status code: " + response.status + ")");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
     }
 }
-
-const singleton = new BusinessObject();
-export default singleton;
+const businessDataObject = new BusinessDataObject();
+export default businessDataObject;
