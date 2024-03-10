@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {Routes, Route, useParams, BrowserRouter} from 'react-router-dom'; // השינוי כאן
+import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import { ClientPage } from '../src/clientPage';
 import { ManagerPage } from '../src/managerPage';
 import { LoginForm } from '../src/loginForm';
