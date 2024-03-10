@@ -25,26 +25,3 @@ function App() {
 export default App;
 
 
-
-// import { BrowserRouter as Router } from 'react-router-dom';
-//  import { BusinessDataClients } from './BusinessClient';
-// function App() {
-//     return (
-//         <Router>
-//             <BusinessDataClients />
-//         </Router>
-//     );
-// }
-
-// export default App; 
-
-// import React from 'react';
-// import { BusinessDetailsManagerPage } from './businessManager'; 
-
-// function App() {
-//   return (
-//  <BusinessDetailsManagerPage />
-//   );
-// }
-
-// export default App;
