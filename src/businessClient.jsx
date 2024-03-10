@@ -1,17 +1,14 @@
-import businessDataObject from './Classes/BusinessObject'; 
+ import React, { useState, useEffect } from 'react';
 import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import Button from '@mui/material/Button';
-import React, { useState, useEffect } from 'react';
-import './Card.css';
-import { LoginForm } from './loginForm'; // שיניתי את LoginComponent ל-LoginForm
-import Swal from 'sweetalert2'; // Import Swal library
-import 'sweetalert2/dist/sweetalert2.css';
-import { createRoot } from 'react-dom/client';
-import { useNavigate } from "react-router-dom";
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
+
+import businessDataObject from './Classes/BusinessObject';
+import '../src/Card.css';
 
 export function BusinessDataClients() {
     const [businessDetails, setBusinessDetails] = useState();

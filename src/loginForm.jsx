@@ -1,15 +1,15 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from "react-router-dom";
+import ImageSlider from './ImageSlider'; // מייבא את הקומפוננטה של הסליידר
 import './login.css';
 
 export function LoginForm() {
     const nameRef = useRef();
     const passwordRef = useRef();
-    const url = "http://localhost:8787";
     const navigate = useNavigate(); 
 
     async function post() {
@@ -17,16 +17,7 @@ export function LoginForm() {
             const nameValue = nameRef.current.value;
             const passwordValue = passwordRef.current.value;
 
-            if (nameValue && passwordValue) {
-                const res = await fetch(url + "/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ name: nameValue, password: passwordValue })
-                });
-                const data = await res.json();
-                console.log(data); 
+            if (nameValue === "admin" && passwordValue === "123456") {
                 navigate("/manager");
             } else {
                 console.log('Please enter both username and password');
@@ -35,10 +26,12 @@ export function LoginForm() {
             console.log(err);
         }
     }
-
+    
+    // מוסיף את התמונה של הסליידר בתוך הקומפוננטה של LoginForm
     return (
-        <Box>
-            <Box id="boxLog"
+        <Box >
+            <ImageSlider />
+            <Box id="boxLog" 
                 component="form"
                 sx={{'& > :not(style)': { m: 1.5, width: '22ch' }}}
                 textAlign="center"
@@ -53,6 +46,8 @@ export function LoginForm() {
         </Box>    
     );
 }
+
+
 
 
 

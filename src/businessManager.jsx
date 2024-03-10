@@ -6,10 +6,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import EditIcon from '@mui/icons-material/Edit';
 import Button from '@mui/material/Button';
 import React, { useState, useEffect } from 'react';
-import businessObject from './Classes/BusinessObject'; // שינוי שם המשתנה מ-businessDataObject ל-businessObject
+import businessObject from './Classes/BusinessObject'; 
 import { TextField } from '@mui/material';
 import './Card.css';
-import 'sweetalert2/dist/sweetalert2.css';
+
 
 import { useNavigate } from 'react-router-dom';
 

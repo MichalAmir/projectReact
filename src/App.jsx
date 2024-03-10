@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import {Routes, Route, useParams, BrowserRouter} from 'react-router-dom'; // השינוי כאן
-import { ClientPage } from './clientPage'; 
-import { ManagerPage } from './managerPage';
-import { LoginForm } from './loginForm';
+import { ClientPage } from '../src/clientPage';
+import { ManagerPage } from '../src/managerPage';
+import { LoginForm } from '../src/loginForm';
 
 
 function App() {
@@ -38,3 +38,13 @@ export default App;
 
 // export default App; 
 
+// import React from 'react';
+// import { BusinessDetailsManagerPage } from './businessManager'; 
+
+// function App() {
+//   return (
+//  <BusinessDetailsManagerPage />
+//   );
+// }
+
+// export default App;

@@ -10,7 +10,7 @@ class BusinessDataObject {
         address: "Tel-Aviv dizengoff 82",
         email: "hsweeth@gmail.com",
         owner: "Yigal Allon",
-        logo: "./pictures/homeLogo.png"
+        logo: "https://clinic.org.il/wp-content/uploads/2021/03/servicesArtboard-1-copy-2-min.png",
     };
     
     constructor() {

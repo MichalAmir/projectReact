@@ -1,15 +1,19 @@
-/* body {
-    background-image: url('../pictures/11.jpg');
+/* .body-login {
+    background-image: url('../src/pictures/12.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 70%;
-}
+} */
 #logAdmin{
     font-family: 'Doppio One';
     font-size: 50px;
     color:black ;
 }
  #boxLog{
-   padding-bottom: 90px;
+   /* padding-bottom: 20px; */
     padding-left: 900px;
-}  */
+} #boxLog {
+    position: relative;
+    top: -510px; /* כאן ניתן לשנות את הערך לפי הגודל שתרצי להזיז למעלה */
+}
+
