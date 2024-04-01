@@ -4,11 +4,13 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import EmailIcon from '@mui/icons-material/Email';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
-
 import businessDataObject from './Classes/BusinessObject';
 import '../src/Card.css';
+
 
 export function BusinessDataClients() {
     const [businessDetails, setBusinessDetails] = useState();
@@ -64,6 +66,16 @@ function CustomCard({ logoSrc, username, businessDetails }) {
                     </div>
 
                     <div className="detail">
+                    <AccountCircleIcon />
+                        <Typography variant="body2" style={{ marginLeft: '5px', fontSize: '17px', fontFamily: '-moz-initial' }}>{businessDetails.owner}</Typography>
+                    </div>
+
+                    <div className="detail">
+                    <EmailIcon />
+                        <Typography variant="body2" style={{ marginLeft: '5px', fontSize: '17px', fontFamily: '-moz-initial' }}>{businessDetails.email}</Typography>
+                    </div>
+
+                    <div className="detail">
                         <LocationOnIcon />
                         <Typography variant="body2" style={{ marginLeft: '5px', fontSize: '17px', fontFamily: '-moz-initial' }}>{businessDetails.address}</Typography>
                     </div>
@@ -71,11 +83,6 @@ function CustomCard({ logoSrc, username, businessDetails }) {
                     <div className="detail">
                         <LocalPhoneIcon />
                         <Typography variant="body2" style={{ marginLeft: '5px', fontSize: '17px', fontFamily: '-moz-initial' }}>{businessDetails.phone}</Typography>
-                    </div>
-
-                    <div className="detail">
-                        <ManageAccountsIcon />
-                        <Typography variant="body2" style={{ marginLeft: '5px', fontSize: '17px', fontFamily: '-moz-initial' }}>{businessDetails.owner}</Typography>
                     </div>
                 </div>
             </CardContent>

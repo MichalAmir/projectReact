@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 610px;
+  margin-bottom: 90px;
   margin-right: 0;
   margin-left: 0;
   align-self: flex-start; /* הכוונה שכל הקלפים יהיו ממוקמים בראש העמוד */
@@ -44,8 +44,8 @@
 }
 
 .card-logo {
-  width: 60px;
-  height: 60px;
+  width: 115px; /* שינוי גודל התמונה */
+  height: 115px; 
   object-fit: cover;
   margin-left: 10px;
 }

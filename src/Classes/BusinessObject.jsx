@@ -10,9 +10,9 @@ class BusinessDataObject {
         address: "Tel-Aviv dizengoff 82",
         email: "hsweeth@gmail.com",
         owner: "Yigal Allon",
-        logo: "https://clinic.org.il/wp-content/uploads/2021/03/servicesArtboard-1-copy-2-min.png",
+        logo: "https://images.desenio.com/zoom/10369_1.jpg",
+        //https://rukminim2.flixcart.com/image/850/1000/jwmfcsw0/name-plate/e/e/f/ds-147-100yellow-original-imafh9zghswk9u6p.jpeg?q=90&crop=false
     };
-    
     constructor() {
         makeObservable(this, {
             businessDataList: observable,
@@ -20,7 +20,6 @@ class BusinessDataObject {
             getLast: action
         });
     }
-
     async addBusinessData(businessData) {
         try {
             const response = await fetch(`${baseUrl}/businessData`, {

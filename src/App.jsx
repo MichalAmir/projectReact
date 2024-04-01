@@ -24,4 +24,14 @@ function App() {
 
 export default App;
 
+// import { ShowAppointments } from "./meetingManager";
+// import { Appointments } from "./meetingClient";
 
+// export function App(){
+//     return(
+//         <>
+//             <ShowAppointments/>
+//         </>
+//     )
+// }
+// export default App;

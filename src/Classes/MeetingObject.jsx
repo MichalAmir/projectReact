@@ -21,9 +21,9 @@ class MeetingObject {
     }
 
     // פונקציה המבצעת בקרת API לקבלת רשימת הפגישות מהשרת
-    async initList() {
+     async initList() {
         try {
-            const res = await fetch(`${baseUrl}/Meetings`, {
+            const res = await fetch(`${baseUrl}/appointments`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -52,7 +52,9 @@ class MeetingObject {
     // פונקציה להוספת פגישה חדשה
     async addMeeting(meeting) {
         try {
-            const res = await fetch(`${baseUrl}/meeting`, {
+          
+            console.log(meeting);
+            const res = await fetch(`${baseUrl}/appointment`, {
                 method: 'POST',
                 body: JSON.stringify(meeting),
                 headers: {
@@ -65,6 +67,7 @@ class MeetingObject {
                 // הפעלת הפעולה push בתוך ה-action
                 runInAction(() => {
                     this.list.push(data);
+                    console.log('Updated meetings list:', this.list); // הדפסה של רשימת הפגישות לאחר ההוספ
                 });
             } else {
                 console.error('Failed to add meeting');

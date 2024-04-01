@@ -99,6 +99,7 @@ function CustomCard({ logoSrc, username, businessDetails, setBusinessDetails }) 
                         <CardMedia
                             component="img"
                             image={logoSrc} // Make sure this points to the correct image file
+                             sx={{ width: '20%', height: 'auto' }} 
                             alt="Store Logo"
                             className='card-logo'
                         />
